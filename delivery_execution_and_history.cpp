@@ -92,7 +92,6 @@ void initStack(Stack &s)
     s.top = -1;
 }
 
-// Check if stack empty-Time Complexity: O(1):
 bool isStackEmpty(Stack s)
 {
     return s.top == -1;
