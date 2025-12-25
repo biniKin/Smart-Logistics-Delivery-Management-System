@@ -77,59 +77,63 @@
 //     }
 // }
 
-#include <vector>
+
 #include <iostream>
 #include "PackageManagement.h"
 using namespace std;
+struct Node
+{
+    Package data;
+    Node *left;
+    Node *right;
 
-// Function to extract packages from BST
-void extractPackages(Package* node, vector<Package>& packages) {
-    if (!node) return;
-    extractPackages(node->left, packages);
-    packages.push_back(*node);
-    extractPackages(node->right, packages);
-}
+    Node(Package p)
+    {
+        data = p;
+        left = right = nullptr;
+    }
+};
 
-// Merge function for priority -> weight
-void merge(vector<Package>& arr, int left, int mid, int right) {
-    int n1 = mid - left + 1;
-    int n2 = right - mid;
-    vector<Package> L(n1), R(n2);
+// ---------- INSERT INTO BST ----------
+Node* insertBST(Node* root, Package p)
+{
+    if (root == nullptr)
+        return new Node(p);
 
-    for (int i = 0; i < n1; i++) L[i] = arr[left + i];
-    for (int j = 0; j < n2; j++) R[j] = arr[mid + 1 + j];
+    // Higher priority goes to LEFT
+    if (p.priority > root->data.priority)
+        root->left = insertBST(root->left, p);
 
-    int i = 0, j = 0, k = left;
-    while (i < n1 && j < n2) {
-        if (L[i].priority > R[j].priority)
-            arr[k++] = L[i++];
-        else if (L[i].priority < R[j].priority)
-            arr[k++] = R[j++];
+    // Lower priority goes to RIGHT
+    else if (p.priority < root->data.priority)
+        root->right = insertBST(root->right, p);
+
+    else
+    {
+        // Same priority → lower weight goes LEFT
+        if (p.weight < root->data.weight)
+            root->left = insertBST(root->left, p);
         else
-            arr[k++] = (L[i].weight < R[j].weight) ? L[i++] : R[j++];
+            root->right = insertBST(root->right, p);
     }
-    while (i < n1) arr[k++] = L[i++];
-    while (j < n2) arr[k++] = R[j++];
+
+    return root;
 }
 
-void mergeSort(vector<Package>& arr, int left, int right) {
-    if (left < right) {
-        int mid = (left + right)/2;
-        mergeSort(arr, left, mid);
-        mergeSort(arr, mid+1, right);
-        merge(arr, left, mid, right);
-    }
-}
+// ---------- INORDER TRAVERSAL ----------
+void displayBST(Node* root)
+{
+    if (root == nullptr)
+        return;
 
-// Display sorted packages
-void displayPackagesSorted(PackageBST& bst) {
-    vector<Package> packages;
-    extractPackages(bst.root, packages);  // root should be public or use a getter
-    mergeSort(packages, 0, packages.size()-1);
+    displayBST(root->left);
 
-    cout << "\nID\tName\tPriority\tWeight\n";
-    for (auto &p : packages)
-        cout << p.id << "\t" << p.name << "\t" << p.priority << "\t\t" << p.weight << endl;
+    cout << root->data.id << "\t"
+         << root->data.name << "\t"
+         << root->data.priority << "\t\t"
+         << root->data.weight << endl;
+
+    displayBST(root->right);
 }
 
 
