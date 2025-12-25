@@ -18,7 +18,15 @@ struct Package
     Package *left;
     Package *right;
 
-
+    Package()
+    {
+        id = -1;
+        name = "";
+        priority = 0;
+        weight = 0.0;
+        left = right = nullptr;
+    }
+    
     Package(int _id, string _name, int _priority, double _weight);
 };
 
@@ -26,7 +34,7 @@ class PackageBST
 {
 
 private:
-    Package *root;
+    
 
     Package *insert(Package *node, Package *pkg);
 
@@ -41,6 +49,7 @@ private:
 
 
 public:
+    Package *root;
     PackageBST();
 
     void insertPackage(int id, string name, int priority, double weight);
