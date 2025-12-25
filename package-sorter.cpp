@@ -77,7 +77,7 @@
 //     }
 // }
 
-#include <vector>
+/*#include <vector>
 #include <iostream>
 #include "PackageManagement.h"
 using namespace std;
@@ -132,7 +132,7 @@ void displayPackagesSorted(PackageBST& bst) {
         cout << p.id << "\t" << p.name << "\t" << p.priority << "\t\t" << p.weight << endl;
 }
 
-
+*/
 // // ---------- MAIN (MENU) ----------
 // int main()
 // {
@@ -184,3 +184,55 @@ void displayPackagesSorted(PackageBST& bst) {
 
 //     return 0;
 // }
+#include <iostream>
+#include <vector>
+#include "PackageSorter.h"
+#include "PackageManagement.h"
+
+using namespace std;
+
+vector<Package> PackageSorter::sortByPriorityWeight(const vector<Package> &packages)
+{
+    vector<Package> sorted = packages;
+
+    // Sort by priority (high to low), then by weight (low to high)
+    sort(sorted.begin(), sorted.end(), [](const Package &a, const Package &b)
+         {
+             if (a.priority != b.priority)
+                 return a.priority > b.priority; // Higher priority first
+             return a.weight < b.weight;         // Lighter weight first if same priority
+         });
+
+    return sorted;
+}
+
+void PackageSorter::displaySortedPackages(const vector<Package> &packages)
+{
+    if (packages.empty())
+    {
+        cout << "No packages to display.\n";
+        return;
+    }
+
+    cout << "\n=== Packages Sorted by Priority & Weight ===\n";
+    cout << "ID\tName\t\tPriority\tWeight\tDestination\n";
+    cout << "--------------------------------------------------------------\n";
+
+    for (const auto &pkg : packages)
+    {
+        cout << pkg.id << "\t"
+             << pkg.name;
+
+        if (pkg.name.length() < 8)
+            cout << "\t";
+        cout << "\t" << pkg.priority << "\t\t"
+             << pkg.weight << " kg\t"
+             << (pkg.destination.empty() ? "-" : pkg.destination) << "\n";
+    }
+}
+
+vector<Package> PackageSorter::extractAndSort(PackageBST &bst)
+{
+    vector<Package> packages = bst.getAllPackages();
+    return sortByPriorityWeight(packages);
+}
