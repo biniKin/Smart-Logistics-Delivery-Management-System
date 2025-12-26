@@ -1,12 +1,9 @@
-# 🚚 Smart Logistics Management System
+# Smart Logistics Management System
 
 A comprehensive C++ logistics management system implementing multiple data structures for efficient package delivery, vehicle management, and route optimization.
 
-## ✅ Status: Code Fixed & Ready to Compile
 
-All bugs have been fixed! Run `verify_fixes.bat` to confirm.
-
-## 🎯 Features
+## Features
 
 ### 1. **Vehicle Management** (Queue)
 - Add vehicles to fleet
@@ -38,7 +35,7 @@ All bugs have been fixed! Run `verify_fixes.bat` to confirm.
 - Pre-loaded Ethiopian cities
 - Add custom cities and routes
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Smart-Logistics-Management-System/
@@ -55,12 +52,10 @@ Smart-Logistics-Management-System/
 │   ├── package-management.cpp
 │   ├── package-sorter.cpp
 │   └── vehicle-management.cpp
-├── HOW_TO_COMPILE_AND_RUN.md        # Detailed instructions
-├── PROJECT_ANALYSIS.md               # Bug fixes & recommendations
-└── verify_fixes.bat                  # Verification script
+
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Step 1: Verify Fixes
 ```cmd
@@ -88,26 +83,8 @@ g++ -o main.exe main.cpp src/*.cpp -I.
 main.exe
 ```
 
-## 🧪 Testing
 
-### Automated Test
-Choose **Option 6** from the main menu to run the integrated test that automatically tests all modules.
-
-### Manual Testing
-1. **Vehicle Management** (Option 1)
-2. **Package Management** (Option 2)
-3. **Package Sorting** (Option 3)
-4. **Delivery System** (Option 4)
-5. **City Routes** (Option 5)
-
-## 🐛 Bugs Fixed
-
-✅ **Fixed duplicate header content** in `package-management.h`  
-✅ **Fixed wrong implementation** in `package-sorter.cpp`  
-✅ **Fixed include path** from `city_graph.h` → `city_management.h`  
-✅ **Fixed case sensitivity** in include statements
-
-## 📊 Data Structures Used
+## Data Structures Used
 
 | Module | Data Structure | Purpose |
 |--------|---------------|---------|
@@ -121,7 +98,7 @@ Choose **Option 6** from the main menu to run the integrated test that automatic
 | Shortest Path | Dijkstra's Algorithm | Optimal routing |
 | All Paths | DFS | Route exploration |
 
-## 🎮 Usage Example
+## Usage Example
 
 ```
 === SMART LOGISTICS MANAGEMENT SYSTEM ===
@@ -163,55 +140,14 @@ Number of stops: 2
 Route: Addis Ababa → Bahir Dar → Mekelle
 ```
 
-## 🔮 Future Enhancements
 
-See `PROJECT_ANALYSIS.md` for detailed feature recommendations:
+## 🛠️ Team members
 
-- Real-time package tracking
-- Load optimization algorithms
-- Priority queue for urgent deliveries
-- Route caching & optimization
-- Delivery time estimation
-- Cost calculation system
-- Performance metrics dashboard
-- Multi-vehicle route assignment
+- AMEN TESHOME REGASA             ETS0165/16
+- AMIR ABDULJELIL MIFTAH          ETS0167/16
+- BETSEGAW TESFAYE W/GEBRIEL      ETS0285/16
+- BINIYAM KINFE G/KIDAN           ETS0304/16
+- DEGAGA DESTA BAKALA             ETS0352/16
+- BINYAM YALEW GEDAM              ETS0297/15
 
-## 📚 Documentation
 
-- **HOW_TO_COMPILE_AND_RUN.md** - Compilation & testing guide
-- **PROJECT_ANALYSIS.md** - Bug fixes & feature recommendations
-- **README.md** - This file
-
-## 🛠️ Technical Details
-
-- **Language**: C++
-- **Compiler**: GCC/MinGW or MSVC
-- **Standard**: C++11 or later
-- **Dependencies**: None (pure C++ implementation)
-- **Platform**: Windows (can be adapted for Linux/Mac)
-
-## 📝 Notes
-
-- The existing `main.exe` was compiled **before** bug fixes
-- Recompile to test the fixed version
-- All data structures implemented from scratch (no STL containers used for core logic)
-- Sample Ethiopian cities pre-loaded for testing
-
-## 🤝 Contributing
-
-To add new features:
-1. Review `PROJECT_ANALYSIS.md` for recommendations
-2. Implement feature in appropriate module
-3. Update header files
-4. Test thoroughly
-5. Update documentation
-
-## 📄 License
-
-Educational project - Free to use and modify
-
----
-
-**Ready to test?** Run `verify_fixes.bat` then compile and run!
-
-**Need help?** Check `HOW_TO_COMPILE_AND_RUN.md` for detailed instructions.
