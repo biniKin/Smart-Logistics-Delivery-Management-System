@@ -185,7 +185,7 @@ void executeDelivery(HistoryQueue &deliveryQueue, HistoryStack &historyStack)
     p.status = "Delivered";
     pushHistory(historyStack, p);
 
-    cout << "\n✅ DELIVERY EXECUTED ✅\n";
+    cout << "\n=== DELIVERY EXECUTED ===\n";
     cout << "Package ID: " << p.id << "\n";
     cout << "Name: " << p.name << "\n";
     cout << "Weight: " << p.weight << " kg\n";

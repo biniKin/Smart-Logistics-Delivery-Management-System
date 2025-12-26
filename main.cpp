@@ -7,7 +7,6 @@
 
 using namespace std;
 
-// Function prototypes for menus
 void displayMainMenu();
 void vehicleManagementMenu();
 void packageManagementMenu();
@@ -19,8 +18,8 @@ void integratedTest();
 int main()
 {
     cout << "==============================================\n";
-    cout << "   SMART LOGISTICS MANAGEMENT SYSTEM v2.0\n";
-    cout << "       Integrated DSA Implementation\n";
+    cout << "  SMART LOGISTICS MANAGEMENT SYSTEM v2.0\n";
+    cout << "      Integrated DSA Implementation\n";
     cout << "==============================================\n";
 
     int mainChoice;
@@ -66,18 +65,16 @@ int main()
 // Main menu display
 void displayMainMenu()
 {
-    cout << "\n╔══════════════════════════════════════════╗\n";
-    cout << "║     SMART LOGISTICS MANAGEMENT SYSTEM   ║\n";
-    cout << "╚══════════════════════════════════════════╝\n";
-    cout << "┌──────────────────────────────────────────┐\n";
-    cout << "│  1. Vehicle Management                  │\n";
-    cout << "│  2. Package Management (BST)            │\n";
-    cout << "│  3. Package Sorting                     │\n";
-    cout << "│  4. Delivery System                     │\n";
-    cout << "│  5. City Route Management               │\n";
-    cout << "│  6. Integrated Delivery Test            │\n";
-    cout << "│  0. Exit                                │\n";
-    cout << "└──────────────────────────────────────────┘\n";
+    cout << "\n========================================\n";
+    cout << "  SMART LOGISTICS MANAGEMENT SYSTEM\n";
+    cout << "========================================\n";
+    cout << "  1. Vehicle Management                  \n";
+    cout << "  2. Package Management (BST)            \n";
+    cout << "  3. Package Sorting                     \n";
+    cout << "  4. Delivery System                     \n";
+    cout << "  5. City Route Management               \n";
+    cout << "  6. Integrated Delivery Test            \n";
+    cout << "  0. Exit                                \n";
     cout << "Enter your choice: ";
 }
 

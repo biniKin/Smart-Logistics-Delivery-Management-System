@@ -141,7 +141,7 @@ void CityGraph::addRoute(const string &city1, const string &city2, int distance)
     cities[idx2].connections[cities[idx2].connectionCount].distance = distance;
     cities[idx2].connectionCount++;
 
-    cout << "Route added: " << city1 << " ↔ " << city2 << " (" << distance << "km)\n";
+    cout << "Route added: " << city1 << " <-> " << city2 << " (" << distance << "km)\n";
 }
 
 void CityGraph::findShortestRoute(const string &start, const string &target)
@@ -252,7 +252,7 @@ void CityGraph::findShortestRoute(const string &start, const string &target)
         cout << path[i];
         if (i < pathCount - 1)
         {
-            cout << " → ";
+            cout << " -> ";
         }
     }
     cout << "\n\nIndividual distances:\n";
