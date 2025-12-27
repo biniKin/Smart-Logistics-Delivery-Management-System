@@ -141,7 +141,7 @@ Route: Addis Ababa → Bahir Dar → Mekelle
 ```
 
 
-## 🛠️ Team members
+## Team members
 
 - AMEN TESHOME REGASA             ETS0165/16
 - AMIR ABDULJELIL MIFTAH          ETS0167/16
