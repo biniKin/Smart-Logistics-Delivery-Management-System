@@ -18,7 +18,7 @@ void integratedTest();
 int main()
 {
     cout << "==============================================\n";
-    cout << "  SMART LOGISTICS MANAGEMENT SYSTEM v2.0\n";
+    cout << "  SMART LOGISTICS MANAGEMENT SYSTEM v1.0\n";
     cout << "      Integrated DSA Implementation\n";
     cout << "==============================================\n";
 

@@ -208,6 +208,6 @@ void undoDelivery(HistoryStack &historyStack, HistoryQueue &deliveryQueue)
     p.status = "Pending";
     enqueuePackage(deliveryQueue, p);
 
-    cout << "\n↩️ DELIVERY UNDONE ↩️\n";
+    cout << "\nDELIVERY UNDONE\n";
     cout << "Package " << p.id << " '" << p.name << "' returned to queue.\n";
 }
